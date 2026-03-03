@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
     
     // $id is wrapped in single quotes but not "escaped"
     $query = "SELECT username, email FROM users WHERE id = '$id'";
-    
+
     echo "<b>Executing Query:</b> " . $query . "<br><hr>";
 
     $result = mysqli_query($connect, $query);

@@ -1,0 +1,4 @@
+
+using ${req.query.q} directly in the HTML string.
+
+http://localhost:3000/search?q=<script>alert(%27XSS_PROVEN%27)</script>

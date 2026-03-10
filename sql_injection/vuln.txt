@@ -1,0 +1,4 @@
+
+you can access any user just by changing the id parameter in URL to any number
+
+'localhost/sql_injection/index.php?id=1'

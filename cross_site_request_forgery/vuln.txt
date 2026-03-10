@@ -1,0 +1,9 @@
+say bank directory is running on port 80 and attacker directory is running on port 81
+
+go to localhost/login.php to login using admin and go to localhost/check_status.php to see its email
+set to 'admin@vuln_web.com'
+
+run the localhost:81/attack.html and see localhost/check_status.php to see if its email
+changed to 'attacker@evil.com'
+
+or execute 'SELECT * FROM users;' in mysql command-line

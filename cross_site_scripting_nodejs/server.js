@@ -1,9 +1,3 @@
-/*
-    Initial commands
-    npm init -y
-    npm install express
-    node server.js
-*/
 
 const express = require('express');
 const app = express();
@@ -15,8 +9,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Vuln: using ${req.query.q} directly in the HTML string.
-// http://localhost:3000/search?q=<script>alert(%27XSS_PROVEN%27)</script>
+
 app.get('/search', (req, res) => {
     const query = req.query.q;
     

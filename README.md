@@ -1,1 +1,1 @@
-Minimal real-world vulnerable web examples
+Minimal real-world examples of insecure web code running the servers on Windows

